@@ -19,15 +19,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Tech Alloy - Controle de produção</Text>
-      <Text>Relatório de Ocorrências</Text>
-      <TextInput
+      <Text style={styles.title}>Tech Alloy - Controle de produção</Text>
+
+      <Text style={styles.text} >Relatório de Ocorrências</Text>
+      <TextInput style={styles.input}
         placeholder="Digite a ocorrência aqui"
         value={ocorrencia}
         onChangeText={setOcorrencia}
       />
-      <Text>PIN de Segurança</Text>
-      <TextInput
+
+      <Text style={styles.text}>PIN de Segurança</Text>
+      <TextInput style={styles.input}
         placeholder="Digite seu PIN"
         value={pin}
         onChangeText={setPin}
@@ -35,23 +37,26 @@ export default function App() {
       />
 
       <Button title='Envie a Ocorrência' color="#3758e7" />
-      <Text>Carga de Cromo (KG)</Text>
-      <TextInput
+
+      <Text style={styles.text} >Carga de Cromo (KG)</Text>
+      <TextInput style={styles.input}
         placeholder="Digite a carga de Cromo"
         value={pesoCromo}
         onChangeText={setPesoCromo}
         keyboardType="numeric-pad"
       />
-      <Text>Carga de Níquel (KG)</Text>
-      <TextInput
+
+      <Text style={styles.text} >Carga de Níquel (KG)</Text>
+      <TextInput style={styles.input}
         placeholder="Digite a carga de Níquel"
         value={pesoNiquel}
         onChangeText={setPesoNiquel}
         keyboardType="numeric-pad"
       />
+
       <Button title="Calcular total da Liga" color='#e06919' onPress={calculaMetais} />
-      <Text>Peso Total da Carga: {pesoTotal}</Text>
-      <StatusBar style="auto" />
+
+      <Text style={styles.textoResultado}>Peso Total da Carga: {pesoTotal}</Text>
     </View>
   );
 }
@@ -62,5 +67,25 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    gap: 20
   },
+  title: {
+    fontSize: 30,
+    textAlign: 'center'
+  },
+  text: {
+    fontSize: 20,
+  },
+  input: {
+    height: 40,
+    padding: 10,
+    borderWidth: 2,
+    borderColor: 'black',
+    borderStyle: 'solid',
+    borderRadius: 10
+  },
+  textoResultado: {
+    fontSize: 20, 
+    color: "red"
+  }
 });
